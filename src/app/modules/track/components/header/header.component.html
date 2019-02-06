@@ -1,0 +1,16 @@
+<header>
+  <nav>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span id="branding" [routerLink]="['/']">Muzix</span>
+        <section class="txt-center">
+          <mat-chip-list>
+            <mat-chip color="primary" class="navLinks" selected [routerLink]="['/']" >Home</mat-chip>
+            <mat-icon class="pipes">remove</mat-icon>
+            <mat-chip color="primary" class="navLinks" selected [routerLink]="['/playlist']">Playlist</mat-chip>
+          </mat-chip-list>
+        </section>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+</header>
