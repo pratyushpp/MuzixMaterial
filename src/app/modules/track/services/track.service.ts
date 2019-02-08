@@ -36,7 +36,7 @@ export class TrackService {
     this.apiKey = '&api_key=0e197c0085c6c947d16ee02969146315';
     this.format = '&format=json';
     this.limit = '&limit=';
-    this.microServiceUrl = 'http://172.23.239.184:8999/tracks/api/v1/';
+    this.microServiceUrl = 'http://localhost:8098/api/v1/';
 
     this.tracksSubject = new BehaviorSubject(this.tracks);
   }
@@ -69,7 +69,7 @@ export class TrackService {
   addToPlayList(track: Track) {
     console.log(track);
     return this.http
-    .post(this.microServiceUrl + 'tracks/track', track, { observe: 'response' })
+    .post(this.microServiceUrl + 'track', track, { observe: 'response' })
     .pipe(catchError(this.handleError));
   }
 
@@ -84,7 +84,7 @@ export class TrackService {
   }
 
   deleteTrackFromPlayList(trackId: string) {
-    console.log(this.microServiceUrl + 'tracks/track/' + trackId);
+    console.log(this.microServiceUrl + '/track/{trackId}' + trackId);
     return this.http.delete(this.microServiceUrl + 'tracks/track/' + trackId, { observe: 'response' })
     .pipe(catchError(this.handleError));
   }

@@ -14,6 +14,6 @@ import { MyMaterialModule } from 'src/app/mymaterial';
     CommonModule,
     MyMaterialModule
   ],
-  exports: [HeaderComponent]
+  exports: [HeaderComponent,FooterComponent]
 })
 export class TrackModule { }
